@@ -20,23 +20,17 @@ public class AuthenticationController {
     private final AuthenticationService authenticationService;
 
     @PostMapping("/signupuser")
-    public ResponseEntity<Usuario> signUpUser(@RequestBody SignUpRequest signUpRequest){
+    public ResponseEntity<Usuario> signUpUser(@RequestBody SignUpRequest signUpRequest) {
         return ResponseEntity.ok(authenticationService.signUpUser(signUpRequest));
     }
+
     @PostMapping("/signupadmin")
-    public ResponseEntity<Usuario> signUpAdmin(@RequestBody SignUpRequest signUpRequest){
+    public ResponseEntity<Usuario> signUpAdmin(@RequestBody SignUpRequest signUpRequest) {
         return ResponseEntity.ok(authenticationService.signUpAdmin(signUpRequest));
     }
 
     @PostMapping("/signin")
-    public ResponseEntity<AuthenticationResponse> signin(@RequestBody SignInRequest signInRequest){
+    public ResponseEntity<AuthenticationResponse> signin(@RequestBody SignInRequest signInRequest) {
         return ResponseEntity.ok(authenticationService.signIn(signInRequest));
     }
-/*
-    @PostMapping("/VALIDARTOKEN")
-    public ResponseEntity<AuthenticationResponse> validartoken(@RequestBody String token ){
-        //deveuelve tu cvalidar token/*
-        return ResponseEntity.ok(authenticationService.signIn(signInRequest));
-    }
-*/
 }
